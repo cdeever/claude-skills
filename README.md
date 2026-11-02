@@ -11,8 +11,8 @@ claude plugin install cd@cdeever-skills
 ```
 
 Or, inside a session: `/plugin marketplace add cdeever/claude-skills`, then
-`/plugin install cd@cdeever-skills`. The repository is private, so the machine needs
-git access to GitHub (`gh auth login`, or an SSH key).
+`/plugin install cd@cdeever-skills`. The repository is public: nothing in it is
+a secret, and none may be added.
 
 To pick up changes: `claude plugin marketplace update cdeever-skills`.
 
