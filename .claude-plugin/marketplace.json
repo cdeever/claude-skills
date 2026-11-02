@@ -1,0 +1,14 @@
+{
+  "name": "cdeever-skills",
+  "description": "Chris Deever's Claude Code skills, shared across Deevnet, EdS and their projects",
+  "owner": {
+    "name": "Chris Deever"
+  },
+  "plugins": [
+    {
+      "name": "project-shaping",
+      "source": "./plugins/project-shaping",
+      "description": "Shape a new idea before it is built: ideation (scope, MVP, versions) and version planning (a definition of done for each version, then the plan)"
+    }
+  ]
+}
