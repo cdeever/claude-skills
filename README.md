@@ -29,6 +29,12 @@ Structure at the start of an idea, light everywhere after it:
 | `/cd:ideation` | A new idea appears. It interviews you on the problem, scope, MVP and versions, and writes a proposal |
 | `/cd:version-planning` | A proposal is accepted, or a version closes. It cuts versions, fixes each version's definition of done, and writes the plan and roadmap item |
 
+Reporting on the work, once it is under way:
+
+| Skill | Use it when |
+|---|---|
+| `/cd:progress-reporting` | In deevnet-docs only. Writes the month, quarter and year accounts on Roadmap Progress, catches the roadmap up, or backfills waypoints from git history. A scheduled routine runs its catch-up on the 1st of each month |
+
 The flow: idea → **ideation** (proposal) → **version planning** (versions, each with a definition
 of done, then the plan) → ADRs and change records → **waypoints** reached → a version's definition
 of done met, a **milestone**.
