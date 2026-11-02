@@ -8,7 +8,7 @@ argument-hint: "[the idea, in a sentence]"
 
 An idea becomes a **proposal**: a page that says what the idea is for, what it is and is not, the
 smallest version worth having (the MVP), and a rough cut of the versions after it. Ideation comes
-before any ADR, change record, roadmap item or plan. Those come from the `version-planning` skill
+before any ADR, change record, roadmap item or plan. Those come from the `cd:version-planning` skill
 once the owner accepts the proposal.
 
 The owner decides. Your job is to ask the questions that give the idea edges, offer options where
@@ -101,6 +101,6 @@ repository's rules. Do not merge it.
 
 ## 4. Hand off
 
-Say what comes next: once the owner accepts the proposal, run the `version-planning` skill on it.
+Say what comes next: once the owner accepts the proposal, run the `cd:version-planning` skill on it.
 That skill turns the version cut into versions with a definition of done, and writes the roadmap
 item and plan. Do not write those here.

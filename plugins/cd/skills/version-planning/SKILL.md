@@ -23,7 +23,7 @@ The words this skill uses:
 - The repository's `CLAUDE.md`: where roadmap items and plans live, their format, and any skill
   that keeps them. In deevnet-docs, that is a roadmap item with a `waypoints:` list, its
   `plan.md`, and the `roadmap-update` skill. Follow those rules over anything here.
-- The proposal (from the `ideation` skill), if there is one, and its version cut.
+- The proposal (from the `cd:ideation` skill), if there is one, and its version cut.
 - What already exists: the item and plan, if any; the ADRs, change records and waypoints already
   reached. On a project under way, the work done shows where v1 really stands.
 

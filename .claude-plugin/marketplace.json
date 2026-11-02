@@ -6,9 +6,9 @@
   },
   "plugins": [
     {
-      "name": "project-shaping",
-      "source": "./plugins/project-shaping",
-      "description": "Shape a new idea before it is built: ideation (scope, MVP, versions) and version planning (a definition of done for each version, then the plan)"
+      "name": "cd",
+      "source": "./plugins/cd",
+      "description": "Chris Deever's own skills, all under /cd:. Shape a new idea before it is built: ideation (scope, MVP, versions) and version planning (a definition of done for each version, then the plan)"
     }
   ]
 }
