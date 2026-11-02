@@ -56,7 +56,9 @@ def area_of(rel):
 def waypoints(args):
     # The roadmap-update skill stays in deevnet-docs; this runs from that repository's root.
     ms = os.path.join(os.getcwd(), ".claude", "skills", "roadmap-update", "scripts", "waypoints.py")
-    if not os.path.exists(ms): sys.exit("run from the root of deevnet-docs: " + ms + " is missing")
+    if not os.path.exists(ms):  # before the waypoints rename (deevnet-docs#355)
+        ms = os.path.join(os.path.dirname(ms), "milestones.py")
+    if not os.path.exists(ms): sys.exit("run from the root of deevnet-docs: .claude/skills/roadmap-update/scripts/waypoints.py is missing")
     out = subprocess.run([sys.executable, ms, "list"] + args, capture_output=True, text=True, check=True).stdout
     return [l.split("\t") for l in out.splitlines() if l.strip()]
 
