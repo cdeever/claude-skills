@@ -1,7 +1,7 @@
 ---
 name: progress-reporting
-description: Track Deevnet's roadmap progress, in the deevnet-docs repository. Use to draft a month's, quarter's or year's account for the Roadmap Progress page (data/accomplishments/<period>.yaml), to catch the roadmap and every account up at any time, which is also what the monthly scheduled run does; and to backfill missing or misdated waypoints from the git history of every Deevnet repository.
-argument-hint: "[catch-up (the default)] | <period: 2026-11 | 2026-Q4 | 2026> | backfill <from> <to>"
+description: Track Deevnet's roadmap progress, in the deevnet-docs repository. Use for the daily light catch-up (waypoints only, merged by itself), to draft a month's, quarter's or year's account for the Roadmap Progress page (data/accomplishments/<period>.yaml), to catch the roadmap and every account up at any time, which is also what the monthly scheduled run does; and to backfill missing or misdated waypoints from the git history of every Deevnet repository.
+argument-hint: "[catch-up (the default, heavy)] | light | <period: 2026-11 | 2026-Q4 | 2026> | backfill <from> <to>"
 ---
 
 # Roadmap Progress
@@ -37,9 +37,30 @@ Every item named must exist; the build fails otherwise. `through` and `reached` 
 the page. They are how a catch-up knows an account has fallen behind, so every account written or
 revised sets them; `period.py <period>` prints the count.
 
+## The light catch-up
+
+Run with `light`, by the daily schedule or by hand. It keeps the day and week views current, which
+are drawn from the waypoints alone, and writes no account: waypoints reached after an account's
+`through` already show beneath it on the page until the heavy catch-up writes it again.
+
+1. **See what is new:** `python3 $SKILL/scripts/period.py catchup` lists the records to check
+   against the roadmap. Ignore the accounts it lists as missing or stale.
+2. **Catch the roadmap up,** with the `roadmap-update` skill, as in step 2 of
+   [Catching up](#catching-up): a waypoint is marked done, with its date, only where a record
+   clearly reaches it and gives the day. **Anything uncertain is left alone**, for the heavy
+   catch-up to list for the owner; a light run never guesses.
+3. **Check and merge:** the `hugo-docs` check, then one pull request, `Progress: waypoints to
+   <today>`, on a branch `progress-light-<today>`, listing each waypoint marked done and the
+   record behind it, and anything left alone. Merge it once its checks pass (`gh pr merge --merge
+   --delete-branch`); if it cannot be merged, leave it open and say why. If nothing was reached,
+   change nothing and open no pull request.
+
+A light run changes only the roadmap pages and project plans the waypoints are on: never
+`data/accomplishments/`, never a definition of done.
+
 ## Catching up
 
-Run at any time, with no arguments or by the monthly schedule. It brings everything up to today,
+The heavy catch-up. Run at any time, with no arguments or by the monthly schedule. It brings everything up to today,
 and running it again with nothing new does nothing.
 
 1. **See what is due:** `python3 $SKILL/scripts/period.py catchup` lists
